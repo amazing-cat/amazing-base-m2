@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="amazingcat" translate="label" sortOrder="1000" class="amazingcat-base-tab">
+            <label>Amazingcat</label>
+        </tab>
+       <section id="amazingcat_base" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Base</label>
+            <tab>amazingcat</tab>
+            <resource>Amazingcat_Base::config</resource>
+
+           <group id="modules"  translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                  showInStore="1">
+               <label>Modules</label>
+               <frontend_model>Amazingcat\Base\Block\Adminhtml\Modules</frontend_model>
+           </group>
+           <group id="notifications" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1"
+                  showInStore="1">
+               <label>Notifications</label>
+               <field id="disable" translate="label" type="select" sortOrder="10" showInDefault="1"
+                      showInWebsite="1" showInStore="1">
+                   <label>Disable updates</label>
+                   <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+               </field>
+           </group>
+        </section>
+    </system>
+</config>

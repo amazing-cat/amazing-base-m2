@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Amazingcat\Base\Model\UpdatesDataProvider">
+        <arguments>
+            <argument name="baseUrl" xsi:type="string">http://amazingcat-modules.pavel.phi.amazingcat.net/api</argument>
+        </arguments>
+    </type>
+
+    <preference for="Amazingcat\Base\Api\Data\VersionSearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
+    <preference for="Amazingcat\Base\Api\UpdatesDataProviderInterface" type="Amazingcat\Base\Model\UpdatesDataProvider"/>
+    <preference for="Amazingcat\Base\Api\VersionRepositoryInterface" type="Amazingcat\Base\Model\VersionsRepository"/>
+    <preference for="Amazingcat\Base\Api\Data\VersionInterface" type="Amazingcat\Base\Model\Version"/>
+
+    <!-- Console commands definitions -->
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="checkUpdates" xsi:type="object">Amazingcat\Base\Console\Command\CheckUpdates</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

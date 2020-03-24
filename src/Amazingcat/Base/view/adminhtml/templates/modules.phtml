@@ -1,0 +1,35 @@
+<?php
+/** @var \Amazingcat\Base\Block\Adminhtml\Modules\Content $block */
+?>
+
+<div class="amazingcat-base-content-wrapper">
+    <div class="amazingcat-base-logo">
+        <img src="<?= $block->escapeUrl($block->getViewFileUrl('Amazingcat_Base::images/logob.png')) ?>" alt="Logo">
+        <img class="margin"
+             src="<?= $block->escapeUrl($block->getViewFileUrl('Amazingcat_Base::images/amazingcatb.png')) ?>"
+             alt="Company name">
+    </div>
+    <?php if (count($block->getModules())) : ?>
+        <div class="amazingcat-base-modules">
+            <?php foreach ($block->getModules() as $module) : ?>
+                <div class="amazingcat-base-module">
+                    <h2><?= $block->escapeHtml($block->formatModuleName($module->getModule())) ?></h2>
+                    <p style="color:
+                        <?= $block->escapeHtml($block->getCompareVersionColor(
+                            $module->getVersion(),
+                            $module->getData('current_version')
+                        )) ?>"
+                    >
+                        <?= $block->escapeHtml($module->getData('current_version')) ?>
+                    </p>
+
+                    <?php if (!$block->moduleIsNew($module->getVersion(), $module->getData('current_version'))) : ?>
+                        <a href="https://devdocs.magento.com/guides/v2.3/cloud/howtos/install-components.html">
+                            (Module has updates)
+                        </a>
+                    <?php endif; ?>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+</div>

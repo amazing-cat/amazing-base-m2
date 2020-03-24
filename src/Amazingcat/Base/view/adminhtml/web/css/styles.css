@@ -1,0 +1,42 @@
+.amazingcat-base-tab strong:before {
+    margin-right: 10px;
+    vertical-align: bottom;
+    background: url(../images/logo.png) no-repeat;
+    width: 20px;
+    height: 19px;
+    content: '';
+    display: inline-block;
+}
+
+.amazingcat-base-content-wrapper {
+    margin-bottom: 10px;
+}
+
+.amazingcat-base-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.amazingcat-base-modules {
+    margin-top: 20px;
+}
+
+.amazingcat-base-logo img.margin {
+    margin-left: 10px;
+}
+
+.amazingcat-base-module {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+.amazingcat-base-module p {
+    margin: 0 10px;
+}
+
+.amazingcat-base-module h2 {
+    margin: 0;
+}
